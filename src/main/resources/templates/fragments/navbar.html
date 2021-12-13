@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!--/*/ <th:block th:include="fragments/header.html :: head"></th:block> /*/-->
+</head>
+<body th:fragment="navbar">
+
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top">
+  <div><a th:href="@{/}"><h3>AW</h3></a></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Pokaż menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+
+    <ul class="navbar-nav" style="font-size: 90%">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" th:href="@{/}"> Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" th:href="@{/}"> Help</a>
+      </li>
+
+    </ul>
+  </div>
+  </nav>
+</body>
+</html>
