@@ -23,12 +23,14 @@ public class ReviewController {
 
     @GetMapping("/reviewList")
     public String reviewList(Model model){
-        model.addAttribute("ReviewList",reviewRepository.findAll());
+        model.addAttribute("ReviewList",reviewRepository.findAllNotHidden());
         return "Review/ReviewList";
     }
     @GetMapping("/reviewList/remove/{id}")
     public String reviewRemove(@PathVariable int id){
-        reviewRepository.deleteById(id);
+        Review review = reviewRepository.getById(id);
+        review.setHidden(true);
+        reviewRepository.save(review);
         return "redirect:/reviewList";
     }
     @GetMapping("/reviewAdd")
