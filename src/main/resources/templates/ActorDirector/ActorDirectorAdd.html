@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
+    <style>
+
+    </style>
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/navbar.html :: navbar"></th:block> /*/-->
+
+<div class="container-fluid px-4 mt-3 pb-4">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <form action="#" th:action="@{/actorAdd}" th:object="${Actor}" method="post">
+                    <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                        <div class="row justify-content-between">
+                            <h4 class="col">Dodaj Aktora/Reżysera</h4>
+                            <div class="justify-content-center mr-3">
+                                <button class="btn btn-secondary" type="reset"> Wyczyść</button>
+                                <button class="btn btn-danger" type="submit">Zapisz</button>
+                            </div>
+                        </div>
+                        <hr class="mt-1 mb-2"/>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="col-lg-2 col-form-label form-control-label">Imię:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" th:field="*{firstName}" class="form-control" placeholder="Typ" required/>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="col-lg-2 col-form-label form-control-label">Nazwisko:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" th:field="*{lastName}" class="form-control" placeholder="Opis"/>
+                                </div>
+                            </div>
+                            <div class="hide">
+                                <input style="visibility: hidden" type = "checkbox" th:field="*{hidden}">
+                                <input style="visibility: hidden" type = "number" th:field="*{id}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="col-lg-5 col-form-label form-control-label">Data narodzin:</label>
+                                <div class="col-lg-12">
+                                    <input type = "date" th:field="*{birthDate}" required class="form-control"/>
+                                </div>
+
+
+                            </div>
+                            <div class="col-4">
+                                <label class="col-lg-5 col-form-label form-control-label">Żyje:</label>
+                                <div class="col-lg-12">
+                                    <input type = "checkbox" th:field="*{alive}" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="col-lg-5 col-form-label form-control-label">Narodowość:</label>
+                                <div class="col-lg-12">
+                                    <input type = "text" th:field="*{nationality}" required class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--/*/ <th:block th:include="fragments/footer.html :: footer"></th:block> /*/-->
+</body>
+</html>

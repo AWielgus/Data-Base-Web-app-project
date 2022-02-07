@@ -25,8 +25,8 @@ public class ActorDirector {
     @Column(name = "birth_date")
     private Date birthDate;
 
-    @Column(name = "death_date")
-    private Date deathDate;
+    @Column(name = "alive")
+    private Boolean alive;
 
     @Column(name = "nationality")
     private String nationality;

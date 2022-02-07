@@ -159,3 +159,25 @@ CREATE TABLE IF NOT EXISTS public.review
 ALTER TABLE public.review
     OWNER to cyboorg;
 
+-- dodawanie warto?ci
+
+INSERT INTO actordirector (first_name,last_name,birth_date, death_date,hidden,nationality) Values
+    ('Adrian','Wielgus','1999-06-22',true,false,'Poland'),
+    ('Dominik','Kowalski','1979-12-12',true,false,'Poland'),
+    ('Rossi','Carlo','1979-12-12',false,false,'Italy'),
+    ('Stefan','Colombo','1979-12-12',true,false,'Italy'),
+    ('Actor1','Actor1','1962-01-12',true,false,'France'),
+    ('Actor2','Actor2','1979-12-22',true,false,'Poland'),
+    ('Actor3','Actor3','1989-11-13',true,false,'Poland'),
+    ('Actor4','Actor4','1974-01-15',true,false,'Poland'),
+    ('Actor5','Actor5','1982-05-28',true,false,'Poland'),
+    ('Actor6','Actor6','1978-09-02',true,false,'Poland'),
+    ('Actor7','Actor7','2000-11-08',true,false,'Poland');
+
+
+
+
+
+
+
+
