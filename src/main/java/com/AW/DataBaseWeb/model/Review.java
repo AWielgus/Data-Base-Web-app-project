@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -23,8 +24,11 @@ public class Review {
     private String text;
 
     @Column(name = "date")
-    private Date date;
+    private LocalDate date;
 
     @Column(name = "hidden")
     private Boolean hidden;
+
+    @ManyToOne
+    private Movie movie_id;
 }

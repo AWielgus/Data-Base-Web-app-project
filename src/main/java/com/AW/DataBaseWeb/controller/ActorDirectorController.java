@@ -18,12 +18,14 @@ public class ActorDirectorController {
 
     @GetMapping("/actorList")
     public String actorDirectorList(Model model){
-        model.addAttribute("ActorList",actorDirectorRepository.findAll());
+        model.addAttribute("ActorList",actorDirectorRepository.findAllNotHidden());
         return "ActorDirector/ActorDirectorList";
     }
     @GetMapping("/ActorList/remove/{id}")
-    public String actorDirectorRemove(@PathVariable Long id){
-        //TODO usuwanie
+    public String actorDirectorRemove(@PathVariable int id){
+        ActorDirector actorDirector = actorDirectorRepository.getById(id);
+        actorDirector.setHidden(true);
+        actorDirectorRepository.save(actorDirector);
         return "redirect:/actorList";
     }
     @GetMapping("/actorAdd")

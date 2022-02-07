@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
+    <style>
+
+    </style>
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/navbar.html :: navbar"></th:block> /*/-->
+
+<div class="container-fluid px-4 mt-3 pb-4">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <form action="#" th:action="@{/MTAdd}" th:object="${MovieTag}" method="post">
+                    <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                        <div class="row justify-content-between">
+                            <h4 class="col">Dodaj Powiązanie Film Tag</h4>
+                            <div class="justify-content-center mr-3">
+                                <button class="btn btn-secondary" type="reset"> Wyczyść</button>
+                                <button class="btn btn-danger" type="submit">Zapisz</button>
+                            </div>
+                        </div>
+                        <hr class="mt-1 mb-2"/>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="col-lg-2 col-form-label form-control-label">Film:</label>
+                                <div>
+                                    <select class="col-form-label col-12" th:field="*{movie_id}">
+                                        <option th:each="i : ${movies}" th:value="${i.id}" th:text="${i.title}">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="col-lg-2 col-form-label form-control-label">Tag:</label>
+                                <div>
+                                    <select class="col-form-label col-12" th:field="*{tag_id}">
+                                        <option th:each="i : ${tags}" th:value="${i.id}" th:text="${i.name}">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hide">
+                                <input style="visibility: hidden" type = "number" th:field="*{id}">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--/*/ <th:block th:include="fragments/footer.html :: footer"></th:block> /*/-->
+</body>
+</html>

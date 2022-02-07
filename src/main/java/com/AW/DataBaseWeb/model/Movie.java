@@ -14,10 +14,10 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private int id;
+    private int id;//
 
     @Column(name = "title")
-    private String title;
+    private String title;//
 
     @Column(name = "length")
     private int length;
@@ -32,8 +32,8 @@ public class Movie {
     private int rating;
 
     @Column(name = "hidden")
-    private Boolean hidden;
+    private Boolean hidden;//
 
     @ManyToOne
-    private ActorDirector director_id;
+    private ActorDirector director_id;//
 }

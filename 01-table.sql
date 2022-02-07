@@ -161,7 +161,7 @@ ALTER TABLE public.review
 
 -- dodawanie warto?ci
 
-INSERT INTO actordirector (first_name,last_name,birth_date, death_date,hidden,nationality) Values
+INSERT INTO actordirector (first_name,last_name,birth_date, alive,hidden,nationality) Values
     ('Adrian','Wielgus','1999-06-22',true,false,'Poland'),
     ('Dominik','Kowalski','1979-12-12',true,false,'Poland'),
     ('Rossi','Carlo','1979-12-12',false,false,'Italy'),
@@ -175,9 +175,10 @@ INSERT INTO actordirector (first_name,last_name,birth_date, death_date,hidden,na
     ('Actor7','Actor7','2000-11-08',true,false,'Poland');
 
 
-
-
-
-
-
-
+Insert into movie (title,description,length,rating,hidden,director_id_id,release_date) values
+      ('Auta','Film dla dzieci',90,0,false,1,'2018-12-12'),
+      ('Kill Mile','Krwawy horror',120,18,false,2,'2016-12-12'),
+      ('Rzeszów drift','Film dla dzieci',161,12,false,3,'2019-12-12'),
+      ('Film1','Film 1',93,12,false,4,'2018-06-12'),
+      ('Film2','Film 2',85,12,false,1,'2012-07-12'),
+      ('Film3','Komedia romantyczna',121,12,false,2,'2016-02-14');

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
+    <style>
+
+    </style>
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/navbar.html :: navbar"></th:block> /*/-->
+
+<div class="container-fluid px-4 mt-3 pb-4">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <form action="#" th:action="@{/movieAdd}" th:object="${Movie}" method="post">
+                    <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                        <div class="row justify-content-between">
+                            <h4 class="col">Dodaj Film</h4>
+                            <div class="justify-content-center mr-3">
+                                <button class="btn btn-secondary" type="reset"> Wyczyść</button>
+                                <button class="btn btn-danger" type="submit">Zapisz</button>
+                            </div>
+                        </div>
+                        <hr class="mt-1 mb-2"/>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="col-lg-2 col-form-label form-control-label">Tytuł:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" th:field="*{title}" class="form-control" placeholder="Typ" required/>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="col-lg-2 col-form-label form-control-label">Reżyser:</label>
+                                <div>
+                                    <select class="col-form-label col-10 offset-1" th:field="*{director_id}">
+                                        <option th:each="i : ${director}" th:value="${i.id}" th:text="${i.firstName+ ' ' +i.lastName }">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hide">
+                                <input style="visibility: hidden" type = "checkbox" th:field="*{hidden}">
+                                <input style="visibility: hidden" type = "number" th:field="*{id}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="col-lg-5 col-form-label form-control-label">Długość w min:</label>
+                                <div class="col-lg-12">
+                                    <input type = "number" th:field="*{length}" required class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <label class="col-lg-5 col-form-label form-control-label">Opis:</label>
+                                <div class="col-lg-12">
+                                    <textarea class="form-control" th:field="*{description}">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <label class="col-lg-5 col-form-label form-control-label">Data wydania:</label>
+                                <div class="col-lg-12">
+                                    <input type = "date" th:field="*{releaseDate}" required class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <label class="col-lg-5 col-form-label form-control-label">Ograniczenie wiekowe:</label>
+                                <div class="col-lg-12">
+                                    <input type = "text" th:field="*{rating}" required class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--/*/ <th:block th:include="fragments/footer.html :: footer"></th:block> /*/-->
+</body>
+</html>
