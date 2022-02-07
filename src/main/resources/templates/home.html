@@ -1,66 +1,143 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
-<style>
+    <!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
+    <style>
 
-</style>
+    </style>
 </head>
 <body>
 <!--/*/ <th:block th:include="fragments/navbar.html :: navbar"></th:block> /*/-->
 
 <div class="container-fluid px-4 mt-3 pb-4">
-  <div class="row">
-    <div class="col-10 offset-1">
-      <div class="card card-outline-secondary mb-1">
-        <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
-          <div style="display: flex; justify-content: left">
-            <div> Obecny : </div>
-          </div>
-          <hr class="mt-1 mb-2"/>
-        </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                    <div style="display: flex; justify-content: left">
+                        <div> Procedury :</div>
+                    </div>
+                    <hr class="mt-1 mb-2"/>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade active show col-10 offset-1" id="status" role="tabpanel"
+                             aria-labelledby="status-tab">
+                            <form action="#" th:action="@{/proc1}" method="post">
+                                <div class="row form-row">
 
-        <div class="card-body">
+                                    <div class="col-4">
+                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" name="value" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Wykonaj</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr class="mt-1 mb-2"/>
+                            <form action="#" th:action="@{/proc1}" method="post">
+                                <div class="row form-row">
 
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade active show" id="status" role="tabpanel" aria-labelledby="status-tab">
-                test
-              </div>
+                                    <div class="col-4">
+                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" name="value" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Wykonaj</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr class="mt-1 mb-2"/>
+                            <form action="#" th:action="@{/proc1}" method="post">
+                                <div class="row form-row">
+
+                                    <div class="col-4">
+                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" name="value" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Wykonaj</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                    <div style="display: flex; justify-content: left">
+                        <div> Funkcje :</div>
+                    </div>
+                    <hr class="mt-1 mb-2"/>
+                </div>
 
-  <div class="row">
-    <div class="col-10 offset-1">
-      <div class="card card-outline-secondary mb-1">
-        <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
-          <div style="display: flex; justify-content: left">
-            <div> Status : </div>
-          </div>
-          <hr class="mt-1 mb-2"/>
-        </div>
+                <div class="card-body">
 
-        <div class="card-body">
+                    <div class="tab-content" id="nav-tabContent2">
+                        <div class="tab-pane fade active show col-10 offset-1" id="status2" role="tabpanel"
+                             aria-labelledby="status-tab">
+                            <form action="#" th:action="@{/proc1}" method="post">
+                                <div class="row form-row">
 
-          <div class="tab-content">
-            <div class="tab-pane fade active show" role="tabpanel" aria-labelledby="status-tab">
-              <div class="form-row" >
+                                    <div class="col-4">
+                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" name="value" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Wykonaj</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr class="mt-1 mb-2"/>
+                            <form action="#" th:action="@{/proc1}" method="post">
+                                <div class="row form-row">
 
-                <div class="form-group col-1"></div>
+                                    <div class="col-4">
+                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" name="value" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Wykonaj</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr class="mt-1 mb-2"/>
+                            <form action="#" th:action="@{/proc1}" method="post">
+                                <div class="row form-row">
 
-                <div class="form-group col-1"></div>
-
-
-              </div>
+                                    <div class="col-4">
+                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <input class="form-control" type="text" name="value" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary">Wykonaj</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
         </div>
-      </div>
     </div>
-  </div>
 
 </div>
 
