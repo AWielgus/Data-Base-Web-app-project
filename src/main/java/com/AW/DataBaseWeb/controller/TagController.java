@@ -18,7 +18,7 @@ public class TagController {
 
     @GetMapping("/tagList")
     public String tagList(Model model){
-        model.addAttribute("TagList",tagRepository.findAll());
+        model.addAttribute("TagList",tagRepository.findAllNotHidden());
         return "Tag/TagList";
     }
     @GetMapping("/tagList/remove/{id}")

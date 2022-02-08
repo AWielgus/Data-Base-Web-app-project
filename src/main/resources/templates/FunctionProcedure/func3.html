@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
+    <style>
+
+    </style>
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/navbar.html :: navbar"></th:block> /*/-->
+
+<div class="container-fluid px-4 mt-3 pb-4">
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                    <div class="row justify-content-between">
+                        <h4 class="col">Wynik funkcji 3</h4>
+                    </div>
+                    <hr class="mt-1 mb-2"/>
+                </div>
+                <div class="card-body">
+
+                    <div class="tab-content " id="nav-tabContent"  >
+                        <div class="tab-pane fade active show col-12" id="status" role="tabpanel" aria-labelledby="status-tab">
+                            <table class="table table-responsive table-hover table-striped" >
+                                <thead >
+                                <tr>
+                                    <td >ID</td>
+                                    <td >Tytuł</td>
+                                    <td >Długość</td>
+                                    <td >Opis</td>
+                                    <td >Data Wydania</td>
+                                    <td >Rating</td>
+                                    <td >Reżyser</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td th:text="${movie.id}"></td>
+                                    <td th:text="${movie.title}"></td>
+                                    <td th:text="${movie.length}"></td>
+                                    <td th:text="${movie.description}"></td>
+                                    <td th:text="${movie.releaseDate}"></td>
+                                    <td th:text="${movie.rating}"></td>
+                                    <td th:text="${movie.director_id.firstName + ' ' +movie.director_id.lastName}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--/*/ <th:block th:include="fragments/footer.html :: footer"></th:block> /*/-->
+</body>
+</html>

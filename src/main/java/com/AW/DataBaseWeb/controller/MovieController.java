@@ -20,7 +20,7 @@ public class MovieController {
 
     @GetMapping("/movieList")
     public String mmovieList(Model model){
-        model.addAttribute("MovieList",movieRepository.findAll());
+        model.addAttribute("MovieList",movieRepository.findAllNotHidden());
         return "Movie/MovieList";
     }
     @GetMapping("/movieList/remove/{id}")

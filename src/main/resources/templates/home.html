@@ -27,7 +27,7 @@
                                 <div class="row form-row">
 
                                     <div class="col-4">
-                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                        <p>Ukrycie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
                                     </div>
                                     <div class="col-4">
                                         <input class="form-control" type="text" name="value" required>
@@ -38,31 +38,33 @@
                                 </div>
                             </form>
                             <hr class="mt-1 mb-2"/>
-                            <form action="#" th:action="@{/proc1}" method="post">
+                            <form action="#" th:action="@{/proc2}" method="post">
                                 <div class="row form-row">
 
                                     <div class="col-4">
-                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                        <p>Usunięcie filmów powiązanych z aktorem wpisanym imieniem i nazwiskiem:</p>
                                     </div>
-                                    <div class="col-4">
-                                        <input class="form-control" type="text" name="value" required>
+                                    <div class="col-3">
+                                        <label>Imię</label>
+                                        <input class="form-control" type="text" name="firstname" required>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
+                                        <label>Nazwisko</label>
+                                        <input class="form-control" type="text" name="lastname" required>
+                                    </div>
+                                    <div class="col-2">
                                         <button type="submit" class="btn btn-primary">Wykonaj</button>
                                     </div>
                                 </div>
                             </form>
                             <hr class="mt-1 mb-2"/>
-                            <form action="#" th:action="@{/proc1}" method="post">
+                            <form action="#" th:action="@{/proc3}" method="post">
                                 <div class="row form-row">
 
                                     <div class="col-4">
-                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                        <p>Przywrócenie wszystkich ukrytych wpisów w bazie danych:</p>
                                     </div>
-                                    <div class="col-4">
-                                        <input class="form-control" type="text" name="value" required>
-                                    </div>
-                                    <div class="col-4">
+                                    <div class="col-8">
                                         <button type="submit" class="btn btn-primary">Wykonaj</button>
                                     </div>
                                 </div>
@@ -88,14 +90,16 @@
                     <div class="tab-content" id="nav-tabContent2">
                         <div class="tab-pane fade active show col-10 offset-1" id="status2" role="tabpanel"
                              aria-labelledby="status-tab">
-                            <form action="#" th:action="@{/proc1}" method="post">
+                            <form action="#" th:action="@{/func1}" method="post">
                                 <div class="row form-row">
 
                                     <div class="col-4">
-                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                        <p>Wyświetla ostatni film danego reżysera i srednią ocen tego filmu:</p>
                                     </div>
                                     <div class="col-4">
-                                        <input class="form-control" type="text" name="value" required>
+                                        <select class="col-form-label col-10 offset-1" name="value">
+                                            <option th:each="i : ${actorDirector}" th:value="${i.id}" th:text="${i.firstName+ ' ' +i.lastName }">
+                                        </select>
                                     </div>
                                     <div class="col-4">
                                         <button type="submit" class="btn btn-primary">Wykonaj</button>
@@ -103,14 +107,16 @@
                                 </div>
                             </form>
                             <hr class="mt-1 mb-2"/>
-                            <form action="#" th:action="@{/proc1}" method="post">
+                            <form action="#" th:action="@{/func2}" method="post">
                                 <div class="row form-row">
 
                                     <div class="col-4">
-                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                        <p>Lista aktorów dla danego filmu:</p>
                                     </div>
                                     <div class="col-4">
-                                        <input class="form-control" type="text" name="value" required>
+                                        <select class="col-form-label col-10 offset-1" name="value">
+                                            <option th:each="i : ${movie}" th:value="${i.id}" th:text="${i.title}">
+                                        </select>
                                     </div>
                                     <div class="col-4">
                                         <button type="submit" class="btn btn-primary">Wykonaj</button>
@@ -118,14 +124,16 @@
                                 </div>
                             </form>
                             <hr class="mt-1 mb-2"/>
-                            <form action="#" th:action="@{/proc1}" method="post">
+                            <form action="#" th:action="@{/func3}" method="post">
                                 <div class="row form-row">
 
                                     <div class="col-4">
-                                        <p>Usunięcie wszystkich ocen które zawierają dane słowo w komentarzu:</p>
+                                        <p>Wyświetla film z danego tagu o najlepszych ocenach:</p>
                                     </div>
                                     <div class="col-4">
-                                        <input class="form-control" type="text" name="value" required>
+                                        <select class="col-form-label col-10 offset-1" name="value">
+                                            <option th:each="i : ${tag}" th:value="${i.id}" th:text="${i.name}">
+                                        </select>
                                     </div>
                                     <div class="col-4">
                                         <button type="submit" class="btn btn-primary">Wykonaj</button>

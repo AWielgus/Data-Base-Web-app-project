@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="fragments/head.html :: head"></th:block> /*/-->
+    <style>
+
+    </style>
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/navbar.html :: navbar"></th:block> /*/-->
+
+<div class="container-fluid px-4 mt-3 pb-4">
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                    <div class="row justify-content-between">
+                        <h4 class="col">Wynik funkcji 2</h4>
+                    </div>
+                    <hr class="mt-1 mb-2"/>
+                </div>
+                <div class="card-body">
+
+                    <div class="tab-content " id="nav-tabContent"  >
+                        <div class="tab-pane fade active show col-12" id="status" role="tabpanel" aria-labelledby="status-tab">
+                            <table class="table table-responsive table-hover table-striped" >
+                                <thead >
+                                <tr>
+                                    <td  style="width: 100%">Imię i nazwisko aktora</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="el: ${list}">
+                                    <td th:text="${el}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--/*/ <th:block th:include="fragments/footer.html :: footer"></th:block> /*/-->
+</body>
+</html>
